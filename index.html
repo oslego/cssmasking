@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Masks - Trekking</title>
+  <style>
+   
+  article{
+    width: 1067px;
+    margin: 0 auto;
+  }
+  
+  body{
+    margin: 0;
+    width: 100%;
+  }
+  
+  header{
+    width: 100%;
+    height: 80vh;
+    background: url(images/trekking.jpg) left top no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  h1{
+    box-sizing: border-box;
+    -webkit-clip-path: polygon(nonzero, 127px 0px, 1067px 0px, 1067px 652px, 0px 652px, 1px 320px, 679px 319px, 678px 307px, 638px 305px, 594px 287px, 590px 265px, 557px 252px, 557px 249px, 519px 235px, 467px 230px, 443px 222px, 428px 212px, 407px 206px, 376px 195px, 375px 186px, 348px 171px, 332px 159px, 295px 129px, 267px 113px, 264px 100px, 247px 95px, 245px 84px, 237px 69px, 226px 76px, 217px 68px, 198px 57px, 192px 50px, 177px 45px, 164px 29px, 151px 23px); 
+    width: 100%;
+    height: 100%;
+    color: rgba(20, 31, 58, 0.65);
+    margin: 0;
+    padding: 4rem 0 0 0;
+    animation-name: title;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    font-size: 11rem;
+    letter-spacing: -0.03em;
+  }
+  
+  section{
+    margin: 3rem 18%;
+    font-size: 1.4em;
+    z-index: 1;
+    color: #333;
+  }
+  
+  section:first-letter{
+    font-size: 4.5em;
+    float: left;
+    margin-right: 1rem;
+    line-height: 6rem;
+  }
+  
+  p+p{
+    margin-top: 2.5em;
+  }
+  
+  @keyframes title{
+    to {
+      padding-left: 21rem;
+    }
+  }
+  
+  </style>
+</head>
+<body>
+  <article>
+    <header>
+      <h1>The Trek</h1>
+    </header>
+    
+    <section>
+      <p>
+        A trek is a long, adventurous journey undertaken on foot in areas where common means of transport are generally not available. Trekking should not be confused with mountaineering.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      </p>
+      <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p> 
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </section>
+    
+  </article>
+</body>
+</html>

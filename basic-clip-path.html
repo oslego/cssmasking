@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Masking - Basic clip-path</title>
+  <style>
+  
+  body{
+    margin: 0;
+    height: 100%;
+  }
+  
+  span{
+    white-space: nowrap;
+  } 
+  
+  h1{
+    font-size: 4rem;
+    margin: 3rem auto 1rem;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: -0.025em;
+    text-align: center;
+  }
+  
+  img{
+    width: 100%;
+    -webkit-clip-path: ellipse(50%, 50%, 50%, 50%);
+    clip-path: ellipse(50%, 50%, 50%, 50%);
+  };
+  
+  </style>
+</head>
+<body>
+  <h1>CSS Masking - <span>clip-path</span></h1>
+  <img src="images/mountains.jpg" alt="View from Bucegi Mountains in Romania" />
+  
+</body>
+</html>

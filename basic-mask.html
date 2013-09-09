@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CSS Masking - Basic Alpha Mask</title>
+  <title>CSS Masking - Basic alpha mask</title>
   <style>
   
   body{
@@ -24,13 +24,14 @@
   
   img{
     width: 100%;
-    -webkit-mask: url(images/alpha-mask.png) center center no-repeat;
+    -webkit-mask: url(images/alpha-mask.png) center center / cover;
+    mask: url(images/alpha-mask.png) center center / cover;
   };
   
   </style>
 </head>
 <body>
-  <h1>CSS Masking - <span>Alpha Mask</span></h1>
+  <h1>CSS Masking - <span>alpha mask</span></h1>
   <img src="images/mountains.jpg" alt="View from Bucegi Mountains in Romania" />
   
 </body>

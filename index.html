@@ -2,25 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CSS Masks - Trekking</title>
+  <title>CSS Masking - Trekking</title>
   <style>
    
-  article{
-    width: 1067px;
-    margin: 0 auto;
-  }
-  
   body{
-    margin: 0;
-    width: 100%;
+    margin: 0 auto;
+    width: 1067px;
+    background: #fff;
   }
   
   header{
-    width: 100%;
+    width: 1067px;
     height: 80vh;
+    top: 0;
+    left: auto;
     background: url(images/trekking.jpg) left top no-repeat;
-    background-size: cover;
-    position: relative;
+    background-size: cover;  
+    position: absolute;
+/*    position: fixed;*/
+/*    -webkit-mask: -webkit-linear-gradient(top, purple 65%, rgba(0,0,0,0));*/
+/*    -webkit-mask: url(images/cat.gif);*/
+/*    -webkit-mask: -webkit-linear-gradient(top, purple 35%, rgba(0,0,0,0)), url(images/cat.gif);*/
+/*    -webkit-mask-size: 100% auto;*/
   }
   
   h1{
@@ -40,6 +43,7 @@
   }
   
   section{
+    padding-top: 80vh;
     margin: 3rem 18%;
     font-size: 1.4em;
     z-index: 1;
@@ -53,7 +57,7 @@
     line-height: 6rem;
   }
   
-  p+p{
+  p + p{
     margin-top: 2.5em;
   }
   

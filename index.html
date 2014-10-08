@@ -5,9 +5,16 @@
   <title>CSS Masking - Trekking</title>
   <style>
 
+  html{
+    perspective: 1100px;
+    height: 100%;
+    width: 100%;
+  }
+
   body{
-    margin: 0;
     background: #fff;
+    margin: 0;
+    -webkit-transform-style: flat;
   }
 
   header{
@@ -18,10 +25,10 @@
     background: url(images/trekking-image.jpg) center top no-repeat;
     background-size: cover;
     position: absolute;
-/*    position: fixed;*/
-/*    -webkit-mask: -webkit-linear-gradient(top, purple 65%, rgba(0,0,0,0));*/
+    /*position: fixed;*/
+/*    -webkit-mask: linear-gradient(purple 65%, rgba(0,0,0,0));*/
 /*    -webkit-mask: url(images/cat.gif);*/
-/*    -webkit-mask: -webkit-linear-gradient(top, purple 35%, rgba(0,0,0,0)), url(images/cat.gif);*/
+/*    -webkit-mask: linear-gradient(purple 35%, rgba(0,0,0,0)), url(images/cat.gif);*/
 /*    -webkit-mask-size: 100% auto;*/
   }
 
@@ -30,10 +37,11 @@
     -webkit-mask-size: cover;
     width: 100vw;
     height: 80vh;
-    color: rgba(20, 31, 58, 0.65);
+    color: #333;
     margin: 0;
     font-size: 15vw;
     letter-spacing: -0.03em;
+    position: relative;
   }
 
   h1 span{
@@ -43,7 +51,7 @@
   }
 
   h1 span:hover {
-    margin: 20vh 0 0 -25vw;
+    margin: 70px 0 0 0;
   }
 
   section{
@@ -69,11 +77,58 @@
     margin-top: 2.5em;
   }
 
+  body, h1{
+    transition: -webkit-transform 1.5s ease-out;
+  }
+
+  h1::before{
+  }
+
+  h1::before{
+    position: absolute;
+    content: ' ';
+    width: inherit;
+    height: inherit;
+    background: url(images/trekking-mask.png) center top no-repeat;
+    background-size: cover;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 1.5s ease-out, opacity .5s ease-out;
+  }
+
+  .explain h1::before{
+    opacity: 0;
+    -webkit-transition-delay: 1s;
+    visibility: visible;
+    z-index: -1;
+  }
+
+  .explain body{
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(45deg) rotateX(10deg) scale(0.9);
+    -webkit-transform-style: preserve-3d;
+  }
+
+  .explain header{
+    perspective: 900px;
+    -webkit-transform-style: preserve-3d;
+  }
+
+  .explain h1{
+    -webkit-transform: translateZ(100px);
+    position: relative;
+  }
+
+  .explain h1::before{
+    -webkit-transform: translateZ(100px);
+    opacity: 0.75;
+  }
+
   </style>
 </head>
 <body>
   <header>
-    <h1><span>The Trek</span></h1>
+    <h1><span>Trekking</span></h1>
   </header>
 
   <article>
@@ -91,5 +146,12 @@
     </section>
 
   </article>
+  <script>
+    document.addEventListener('keydown', function(e){
+      if (e.keyCode === 27){
+        document.documentElement.classList.toggle('explain')
+      }
+    })
+  </script>
 </body>
 </html>

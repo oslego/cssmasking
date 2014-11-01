@@ -6,7 +6,6 @@
   <style>
 
   html{
-    perspective: 1100px;
     height: 100%;
     width: 100%;
   }
@@ -94,6 +93,10 @@
     opacity: 0;
     visibility: hidden;
     transition: transform 1.5s ease-out, opacity .5s ease-out;
+  }
+
+  .explain{
+    perspective: 1100px; /* Only set perspective on HTML when needed or it interferes with position:fixed and masking */
   }
 
   .explain h1::before{

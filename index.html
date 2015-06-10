@@ -13,7 +13,7 @@
   body{
     background: #fff;
     margin: 0;
-    -webkit-transform-style: flat;
+    transform-style: flat;
   }
 
   header{
@@ -50,13 +50,9 @@
     transition: margin 1s ease-in-out;
   }
 
-  h1 span:hover {
-    margin: 70px 0 0 0;
-  }
-
   section{
-    padding-top: 80vh;
-    margin: 3rem 18%;
+    padding-top: 85vh;
+    margin: 0 18% 3em;
     font-size: 1.4em;
     z-index: 1;
     color: #333;
@@ -82,9 +78,6 @@
   }
 
   h1::before{
-  }
-
-  h1::before{
     position: absolute;
     content: ' ';
     width: inherit;
@@ -92,7 +85,6 @@
     background: url(images/trekking-mask.png) center top no-repeat;
     background-size: cover;
     opacity: 0;
-    visibility: hidden;
     transition: transform 1.5s ease-out, opacity .5s ease-out;
   }
 
@@ -101,31 +93,27 @@
   }
 
   .explain h1::before{
-    opacity: 0;
-    -webkit-transition-delay: 1s;
-    visibility: visible;
+    transition-delay: 1s;
     z-index: -1;
+    opacity: 0.75;
+  }
+
+  .explain h1 span:hover {
+    margin: 70px 0 0 0;
   }
 
   .explain body{
-    -webkit-transform-style: preserve-3d;
     transform: rotateY(45deg) rotateX(10deg) scale(0.9);
-    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
   }
 
   .explain header{
     perspective: 900px;
-    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
   }
 
   .explain h1{
-    -webkit-transform: translateZ(100px);
-    position: relative;
-  }
-
-  .explain h1::before{
-    -webkit-transform: translateZ(100px);
-    opacity: 0.75;
+    transform: translateZ(100px);
   }
 
   </style>
@@ -151,9 +139,20 @@
 
   </article>
   <script>
+    var container = document.querySelector('html');
     document.addEventListener('keydown', function(e){
       if (e.keyCode === 27){
-        document.documentElement.classList.toggle('explain')
+
+        // cache perspective as inline style until transition ends to avoid masking artifacts
+        if (container.classList.contains('explain')){
+          container.style.perspective = window.getComputedStyle(container).perspective;
+
+          setTimeout(function(){
+            container.removeAttribute('style');
+          }, 1500)
+        }
+
+        container.classList.toggle('explain');
       }
     })
   </script>
